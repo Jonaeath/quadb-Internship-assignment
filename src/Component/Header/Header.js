@@ -2,18 +2,30 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const textStyle = {
+    fontWeight: "bold",
+    color: "white",
+  };
+
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar
+        expand="lg"
+        style={{ backgroundColor: "#0dcaf0", marginBottom: "1rem" }}
+      >
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home" style={{ ...textStyle }}>
+            QuadB-Assignment
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#home">Link</Nav.Link>
+            <Nav className="me-auto" style={{ fontWeight: "bold" }}>
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

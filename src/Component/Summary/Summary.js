@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+const SquareBox = {
+  border: "1px solid #0dcaf0",
+  marginLeft: "50px",
+  marginRight: "50px",
+  padding: "10px",
+  borderRadius: "8px",
+};
+
 const Summary = () => {
   const { id } = useParams();
 
@@ -22,7 +30,7 @@ const Summary = () => {
   const { name, summary } = showData;
 
   return (
-    <div>
+    <div style={{ ...SquareBox }}>
       <h2>{name}</h2>
       <div dangerouslySetInnerHTML={{ __html: summary }} />
     </div>

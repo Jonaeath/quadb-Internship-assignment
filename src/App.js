@@ -1,17 +1,32 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as React,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./Home/Home";
 import Summary from "./Component/Summary/Summary";
+import Layout from "./Layout/Layout";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/summary/:id",
+        element: <Summary />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/summary/:id" element={<Summary />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

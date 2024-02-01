@@ -12,13 +12,31 @@ const DispalyCardData = ({ allData }) => {
 
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
+      <Card
+        style={{
+          width: "18rem",
+          marginBottom: "1rem",
+          borderColor: "#0dcaf0",
+          backgroundColor: "#9FA6B2",
+        }}
+      >
         <Card.Img variant="top" src={imageUrl} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
-          <Card.Text>Some quick</Card.Text>
+          <Card.Text>
+            {type} and {language}
+          </Card.Text>
+          <Card.Title>Runtime: {runtime}</Card.Title>
           <Link to={`/summary/${allData.id}`}>
-            <Button variant="primary">Go somewhere</Button>
+            <Button
+              style={{
+                backgroundColor: "#0dcaf0",
+                borderColor: "#0dcaf0",
+                color: "black",
+              }}
+            >
+              Show Summary
+            </Button>
           </Link>
         </Card.Body>
       </Card>
