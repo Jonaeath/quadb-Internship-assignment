@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import BookingFrom from "./BookingFrom";
 
 const SquareBox = {
@@ -30,7 +30,7 @@ const Summary = () => {
     return <div>Loading...</div>;
   }
 
-  const { name, summary } = showData;
+  const { name, summary, language } = showData;
 
   const handleBookTicket = () => {
     setBookingForm(true);
@@ -57,7 +57,11 @@ const Summary = () => {
       </Button>
 
       {mBookingFrom && (
-        <BookingFrom movieName={name} onClose={handleCloseForm} />
+        <BookingFrom
+          movieName={name}
+          movieLanguage={language}
+          onClose={handleCloseForm}
+        />
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookingFrom = ({ movieName, onClose }) => {
+const BookingFrom = ({ movieName, movieLanguage, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onClose();
@@ -21,6 +21,10 @@ const BookingFrom = ({ movieName, onClose }) => {
           <label>
             Movie Name:
             <input type="text" value={movieName} readOnly />
+          </label>
+          <label>
+            Movie Language:
+            <input type="text" value={movieLanguage} readOnly />
           </label>
           <br />
           <button
